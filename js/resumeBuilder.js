@@ -70,7 +70,8 @@ var bio = {
     "location": "Kaunas, Lithuania"
   },
   "skills" : [
-    "HTML", "CSS", "Responsive website & images", "Bootstrap, intro to Python"
+    "HTML", "CSS", "Responsive website & images", "Bootstrap", "Java Script",
+    "Python basics"
   ],
   "bioPic": "images/me2"
 };
@@ -133,4 +134,20 @@ var education = {
     "url": "https://www.udacity.com/course/responsive-images--ud882"
     }
   ]
+}
+
+if(bio.skills.length > 0) {
+  $("#header").append(HTMLskillsStart);
+  var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+  $("#skills").append(formattedSkill);
+  formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+  $("#skills").append(formattedSkill);
+  formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+  $("#skills").append(formattedSkill);
+  formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
+  $("#skills").append(formattedSkill);
+  formattedSkill = HTMLskills.replace("%data%", bio.skills[4]);
+  $("#skills").append(formattedSkill);
+  formattedSkill = HTMLskills.replace("%data%", bio.skills[5]);
+  $("#skills").append(formattedSkill);
 }
