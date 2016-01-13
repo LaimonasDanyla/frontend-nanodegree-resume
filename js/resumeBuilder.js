@@ -77,25 +77,46 @@ var projects = {
        using bootstrap, image file change based on viewport, off-canvas \
        navigation, some simple javascript usage, some usage of polymers.",
       "images": [
-      "images/r1",
-      "images/r2",
-      "images/r3",
-      "images/r3",
-      "images/r4",
-      "images/r5",
-      "images/r6",
-      "images/r7",
-      "images/r8"
+        "images/sample1.jpg",
+        "images/r2.jpg",
+        "images/r3.jpg",
+        "images/r4.jpg",
+        "images/r5.jpg"
       ]
     },
-  /*  {
-    "project":
-    "dates":
-    "description":
-    "images":
-  }*/
+    {
+    "title": "Interactive resume",
+    "dates": "2016 January",
+    "description": "Interactive resume using HTML, JS, CSS",
+    "images": [
+      "http://lorempixel.com/image_output/business-q-c-400-400-9.jpg",
+      "http://lorempixel.com/image_output/abstract-q-c-400-400-1.jpg"
+      ]
+    }
   ]
 }
+
+projects.display = function() {
+  for (index in projects.project) {
+    $("#projects").append(HTMLprojectStart);
+    var projectTitle = HTMLprojectTitle.replace("%data%",
+      projects.project[index].title);
+    $(".project-entry:last").append(projectTitle);
+    var projectDescription = HTMLprojectDescription.replace("%data%",
+      projects.project[index].description);
+    $(".project-entry:last").append(projectDescription);
+
+    if (projects.project[index].images.length > 0) {
+      for (image in projects.project[index].images) {
+        var projectImages = HTMLprojectImage.replace("%data%",
+          projects.project[index].images[image]);
+        $(".project-entry:last").append(projectImages);
+      }
+    }
+  }
+}
+projects.display(); //call the function above.
+
 
 var bio = {
   "name": "Laimonas Danyla",
