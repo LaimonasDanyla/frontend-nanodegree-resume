@@ -14,20 +14,33 @@ var work = {
     {
     "employer": "Suomen Broiler Oy",
     "title": "Representative for export markets",
-    "location": "Finland",
+    "location": "Masku, Finland",
     "dates": "2002-2015",
     "description": "Responsible for sales, marketing and customer service"
     },
     {
     "employer": "Sprendika Ltd.",
     "title": "Company Manager, owner",
-    "location": "Lithuania",
+    "location": "Kaunas, Lithuania",
     "dates": "2005 - till now",
     "description": "Sales, marketing and service of equipment"
     }
   ]
 }
+//learning function
+/*
+function locationizer(work_obj) {
+  var locationArray = [];
+  for (job in work_obj.jobs) {
+    var newLocation = work_obj.jobs[job].location;
+    locationArray.push(newLocation);
+  }
+   return locationArray;
+}
+console.log(locationizer(work));
+*/
 
+function displayWork(){
 for (job in work.jobs) {
   $("#workExperience").append(HTMLworkStart);
 
@@ -51,7 +64,9 @@ for (job in work.jobs) {
   var formattedDescription = HTMLworkDescription.replace("%data%",
    work.jobs[job].description);
   $(".work-entry:last").append(formattedDescription);
+  }
 }
+displayWork()
 
 var projects = {
   "project": [
@@ -99,6 +114,20 @@ var bio = {
   ],
   "bioPic": "images/me2"
 };
+
+//add function to make Surname all in caps after Internationalize button click
+function inName(name) {
+  var intlName = bio.name;
+  //instead of bio.name $("#name").html() also works.
+  name = intlName.trim().split(" ");
+  console.log(name);
+  name[1] = name[1].toUpperCase();
+  name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
+// slice (0,1) is needed to take the first letter - 1 is determining the end
+//of slice
+  return name[0] +" "+ name[1];
+  }
+$("#main").append(internationalizeButton);
 
 var education = {
   "schools": [
