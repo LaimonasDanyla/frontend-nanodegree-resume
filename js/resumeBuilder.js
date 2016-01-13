@@ -225,3 +225,6 @@ if(bio.skills.length > 0) {
   formattedSkill = HTMLskills.replace("%data%", bio.skills[5]);
   $("#skills").append(formattedSkill);
 }
+
+//Add Map
+$("#mapDiv").append(googleMap);
