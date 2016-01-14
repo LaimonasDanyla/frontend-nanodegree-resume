@@ -40,7 +40,7 @@ function locationizer(work_obj) {
 console.log(locationizer(work));
 */
 
-function displayWork(){
+work.display = function() {
 for (job in work.jobs) {
   $("#workExperience").append(HTMLworkStart);
 
@@ -66,7 +66,7 @@ for (job in work.jobs) {
   $(".work-entry:last").append(formattedDescription);
   }
 }
-displayWork()
+work.display();
 
 var projects = {
   "project": [
@@ -135,6 +135,18 @@ var bio = {
   ],
   "bioPic": "images/me2"
 };
+
+bio.display = function() {
+    if (bio.skills.length > 0) {
+      $("#header").append(HTMLskillsStart);
+      for (skill in bio.skills) {
+      var formattedSkill = HTMLskills.replace("%data%",
+          bio.skills[skill]);
+      $("#skills:last").append(formattedSkill);
+    }
+  }
+}
+bio.display();
 
 //add function to make Surname all in caps after Internationalize button click
 function inName(name) {
@@ -208,22 +220,6 @@ var education = {
     "url": "https://www.udacity.com/course/responsive-images--ud882"
     }
   ]
-}
-
-if(bio.skills.length > 0) {
-  $("#header").append(HTMLskillsStart);
-  var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-  $("#skills").append(formattedSkill);
-  formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-  $("#skills").append(formattedSkill);
-  formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-  $("#skills").append(formattedSkill);
-  formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
-  $("#skills").append(formattedSkill);
-  formattedSkill = HTMLskills.replace("%data%", bio.skills[4]);
-  $("#skills").append(formattedSkill);
-  formattedSkill = HTMLskills.replace("%data%", bio.skills[5]);
-  $("#skills").append(formattedSkill);
 }
 
 //Add Map
