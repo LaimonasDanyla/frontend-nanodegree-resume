@@ -1,13 +1,6 @@
 
 
-var name = "Laimonas Danyla";
-var role = "Web Developer";
 
-var formattedName = HTMLheaderName.replace("%data%", name);
-var formattedRole = HTMLheaderRole.replace("%data%", role);
-
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
 
 var work = {
   "jobs": [
@@ -89,7 +82,7 @@ var projects = {
     "dates": "2016 January",
     "description": "Interactive resume using HTML, JS, CSS",
     "images": [
-      "http://lorempixel.com/image_output/business-q-c-400-400-9.jpg",
+      "http://lorempixel.com/image_output/city-q-c-400-400-5.jpg",
       "http://lorempixel.com/image_output/abstract-q-c-400-400-1.jpg"
       ]
     }
@@ -133,10 +126,17 @@ var bio = {
     "HTML", "CSS", "Responsive website & images", "Bootstrap", "Java Script",
     "Python basics"
   ],
-  "bioPic": "images/me2"
+  "bioPic": "images/me2.jpg"
 };
 
 bio.display = function() {
+  var formattedName = HTMLheaderName.replace("%data%",
+      bio.name);
+    $("#header").prepend(formattedName);
+  var formattedRole = HTMLheaderRole.replace("%data%",
+      bio.role);
+    $("#header").append(formattedRole);
+
     if (bio.skills.length > 0) {
       $("#header").append(HTMLskillsStart);
       for (skill in bio.skills) {
@@ -144,6 +144,16 @@ bio.display = function() {
           bio.skills[skill]);
       $("#skills:last").append(formattedSkill);
     }
+  }
+  if(bio.bioPic.length > 0) {
+    var formattedPic = HTMLbioPic.replace("%data%",
+      bio.bioPic);
+    $("#header").append(formattedPic);
+  }
+  if (bio.welcomeMessage.length > 0) {
+    var formattedMessage = HTMLwelcomeMsg.replace("%data%",
+      bio.welcomeMessage);
+    $("#header").append(formattedMessage);
   }
 }
 bio.display();
@@ -167,22 +177,21 @@ var education = {
     {
     "name": "Kaunas Technology University",
     "location": "Kaunas, Lithuania",
-    "degree": "MBA",
-    "majors": ["Business administration",
-    "Internationa Business Management"],
+    "degree": "M.Sc. Business Management and Administration (MBA)",
+    "majors": ["Finances", "Marketing", "Management"],
     "dates": "2004-2006",
     "url": "www.ktu.edu"
     },
     {
       "name": "Udacity",
-      "location": "St Mountain View, USA",
+      "location": "(ONLINE) St Mountain View, USA",
       "degree": "Intro to Programming NanoDegree",
       "majors": ["Python", "App developemnt"],
       "dates": "2015 - till now",
       "url": "www.udacity.com"
     }
   ],
-  "onlineCources": [
+  "onlineCourses": [
     {
     "title": "JavaScript Basics",
     "school": "Udacity",
@@ -218,9 +227,55 @@ var education = {
     "school": "Udacity",
     "dates": "2015 December",
     "url": "https://www.udacity.com/course/responsive-images--ud882"
+    },
+    {
+      "title": "Database Fundamentals",
+      "school": "Microsoft Virtual Academy",
+      "dates": "2015 September",
+      "url": "https://mva.microsoft.com/"
     }
   ]
 }
+
+education.display = function() {
+  for (school in education.schools) {
+    $("#education").append(HTMLschoolStart);
+    var formattedSchool = HTMLschoolName.replace("%data%",
+        education.schools[school].name);
+      $(".education-entry:last").append(formattedSchool);
+    var formattedDegree = HTMLschoolDegree.replace("%data%",
+        education.schools[school].degree);
+      $(".education-entry:last").append(formattedDegree);
+    var formattedDates = HTMLschoolDates.replace("%data%",
+        education.schools[school].dates);
+      $(".education-entry:last").append(formattedDates);
+    var formattedLocation = HTMLschoolLocation.replace("%data%",
+        education.schools[school].location);
+      $(".education-entry:last").append(formattedLocation);
+    var formattedMajor = HTMLschoolMajor.replace("%data%",
+        education.schools[school].majors);
+      $(".education-entry:last").append(formattedMajor);
+    }
+
+    if (education.onlineCourses.length > 0) {
+        $(".education-entry:last").append(HTMLonlineClasses);
+      for (course in education.onlineCourses) {
+        var formattedTitle = HTMLonlineTitle.replace("%data%",
+            education.onlineCourses[course].title);
+          $(".education-entry:last").append(formattedTitle);
+        var formattedSchool = HTMLonlineSchool.replace("%data%",
+            education.onlineCourses[course].school);
+          $(".education-entry:last").append(formattedSchool);
+        var formattedDates = HTMLonlineDates.replace("%data%",
+            education.onlineCourses[course].dates);
+          $(".education-entry:last").append(formattedDates);
+        var formattedURL = HTMLonlineURL.replace("%data%",
+            education.onlineCourses[course].url);
+          $(".education-entry:last").append(formattedURL);
+      }
+    }
+}
+education.display();
 
 //Add Map
 $("#mapDiv").append(googleMap);
