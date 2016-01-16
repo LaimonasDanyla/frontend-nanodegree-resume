@@ -1,5 +1,81 @@
 
+var bio = {
+  "name": "Laimonas Danyla",
+  "role": "Web Developer",
+  "welcomeMessage": "Welcome to my resume",
+  "contacts": {
+    "mobile": "+37069914894",
+    "email": "laimonas.danyla@gmail.com",
+    "github": "LaimonasDanyla",
+    "twitter": "@laimonasdanyla",
+    "location": "Kaunas, Lithuania"
+  },
+  "skills" : [
+    "HTML", "CSS", "Responsive website & images", "Bootstrap", "Java Script",
+    "Python basics"
+    ],
+  "bioPic": "images/me2.jpg"
+};
 
+bio.display = function() {
+  var formattedName = HTMLheaderName.replace("%data%", bio.name);
+    $("#header").prepend(formattedName);
+  var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+    $("#header").append(formattedRole);
+
+    var footerName = HTMLcontactGeneric.replace("%data%", bio.name);
+      $("#footerContacts").append(footerName);
+
+    var formattedMobile = HTMLmobile.replace("%data%",
+        bio.contacts.mobile);
+      $("#footerContacts:last").append(formattedMobile);
+    var formattedEmail = HTMLemail.replace("%data%",
+        bio.contacts.email);
+      $("#footerContacts:last").append(formattedEmail);
+    var formattedTwitter = HTMLtwitter.replace("%data%",
+        bio.contacts.twitter);
+      $("#footerContacts:last").append(formattedTwitter);
+    var formattedGithub = HTMLgithub.replace("%data%",
+        bio.contacts.github);
+      $("#footerContacts:last").append(formattedGithub);
+    var formattedLocation = HTMLlocation.replace("%data%",
+        bio.contacts.location);
+      $("#footerContacts:last").append(formattedLocation);
+
+    if (bio.skills.length > 0) {
+      $("#header").append(HTMLskillsStart);
+      for (skill in bio.skills) {
+      var formattedSkill = HTMLskills.replace("%data%",
+          bio.skills[skill]);
+      $("#skills:last").append(formattedSkill);
+    }
+  }
+  if(bio.bioPic.length > 0) {
+    var formattedPic = HTMLbioPic.replace("%data%",
+      bio.bioPic);
+    $("#header").append(formattedPic);
+  }
+  if (bio.welcomeMessage.length > 0) {
+    var formattedMessage = HTMLwelcomeMsg.replace("%data%",
+      bio.welcomeMessage);
+    $("#header").append(formattedMessage);
+  }
+}
+bio.display();
+
+//add function to make Surname all in caps after Internationalize button click
+function inName(name) {
+  var intlName = bio.name;
+  //instead of bio.name $("#name").html() also works.
+  name = intlName.trim().split(" ");
+  console.log(name);
+  name[1] = name[1].toUpperCase();
+  name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
+// slice (0,1) is needed to take the first letter - 1 is determining the end
+//of slice
+  return name[0] +" "+ name[1];
+  }
+$("#main").append(internationalizeButton);
 
 
 var work = {
@@ -111,66 +187,7 @@ projects.display = function() {
 projects.display(); //call the function above.
 
 
-var bio = {
-  "name": "Laimonas Danyla",
-  "role": "Web Developer",
-  "welcomeMessage": "Welcome to my resume",
-  "contacts": {
-    "mobile": "+37069914894",
-    "email": "laimonas.danyla@gmail.com",
-    "github": "LaimonasDanyla",
-    "twitter": "@laimonasdanyla",
-    "location": "Kaunas, Lithuania"
-  },
-  "skills" : [
-    "HTML", "CSS", "Responsive website & images", "Bootstrap", "Java Script",
-    "Python basics"
-  ],
-  "bioPic": "images/me2.jpg"
-};
 
-bio.display = function() {
-  var formattedName = HTMLheaderName.replace("%data%",
-      bio.name);
-    $("#header").prepend(formattedName);
-  var formattedRole = HTMLheaderRole.replace("%data%",
-      bio.role);
-    $("#header").append(formattedRole);
-
-    if (bio.skills.length > 0) {
-      $("#header").append(HTMLskillsStart);
-      for (skill in bio.skills) {
-      var formattedSkill = HTMLskills.replace("%data%",
-          bio.skills[skill]);
-      $("#skills:last").append(formattedSkill);
-    }
-  }
-  if(bio.bioPic.length > 0) {
-    var formattedPic = HTMLbioPic.replace("%data%",
-      bio.bioPic);
-    $("#header").append(formattedPic);
-  }
-  if (bio.welcomeMessage.length > 0) {
-    var formattedMessage = HTMLwelcomeMsg.replace("%data%",
-      bio.welcomeMessage);
-    $("#header").append(formattedMessage);
-  }
-}
-bio.display();
-
-//add function to make Surname all in caps after Internationalize button click
-function inName(name) {
-  var intlName = bio.name;
-  //instead of bio.name $("#name").html() also works.
-  name = intlName.trim().split(" ");
-  console.log(name);
-  name[1] = name[1].toUpperCase();
-  name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
-// slice (0,1) is needed to take the first letter - 1 is determining the end
-//of slice
-  return name[0] +" "+ name[1];
-  }
-$("#main").append(internationalizeButton);
 
 var education = {
   "schools": [
@@ -184,7 +201,7 @@ var education = {
     },
     {
       "name": "Udacity",
-      "location": "(ONLINE) St Mountain View, USA",
+      "location": " ",
       "degree": "Intro to Programming NanoDegree",
       "majors": ["Python", "App developemnt"],
       "dates": "2015 - till now",
