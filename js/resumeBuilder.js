@@ -2,7 +2,7 @@
 var bio = {
   "name": "Laimonas Danyla",
   "role": "Web Developer",
-  "welcomeMessage": "Welcome to my resume",
+
   "contacts": {
     "mobile": "+37069914894",
     "email": "laimonas.danyla@gmail.com",
@@ -10,6 +10,7 @@ var bio = {
     "twitter": "@laimonasdanyla",
     "location": "Kaunas, Lithuania"
   },
+  "welcomeMessage": "Welcome to my resume",
   "skills" : [
     "HTML", "CSS", "Responsive website & images", "Bootstrap", "Java Script",
     "Python basics"
@@ -88,7 +89,7 @@ var work = {
     "description": "Responsible for sales, marketing and customer service"
     },
     {
-    "employer": "Sprendika Ltd.",
+    "employer": "Sprendika uab",
     "title": "Company Manager, owner",
     "location": "Kaunas, Lithuania",
     "dates": "2005 - till now",
@@ -196,7 +197,7 @@ var education = {
     "location": "Kaunas, Lithuania",
     "degree": "M.Sc. Business Management and Administration (MBA)",
     "majors": ["Finances", "Marketing", "Management"],
-    "dates": "2004-2006",
+    "dates": 2006,
     "url": "www.ktu.edu"
     },
     {
@@ -204,7 +205,7 @@ var education = {
       "location": " ",
       "degree": "Intro to Programming NanoDegree",
       "majors": ["Python", "App developemnt"],
-      "dates": "2015 - till now",
+      "dates": 2016,
       "url": "www.udacity.com"
     }
   ],
@@ -212,43 +213,43 @@ var education = {
     {
     "title": "JavaScript Basics",
     "school": "Udacity",
-    "dates": "January 2016",
+    "dates": 2016,
     "url": "https://www.udacity.com/course/c-ud804-nd"
     },
     {
     "title": "Linux Command Line Basics",
     "school": "Udacity",
-    "dates": "January 2016",
+    "dates": 2016,
     "url": "https://www.udacity.com/course/c-ud595/l-4575425132"
     },
     {
     "title": "How to Use Git and GitHub",
     "school": "Udacity",
-    "dates": "January 2016",
+    "dates": 2016,
     "url": "https://www.udacity.com/course/c-ud775"
     },
     {
     "title": "Intro to HTML and CSS",
     "school": "Udacity",
-    "dates": "2015 December",
+    "dates": 2015,
     "url": "https://www.udacity.com/course/c-ud304-nd"
     },
     {
     "title":"Responsive Web Design Fundamentals",
     "school": "Udacity",
-    "dates": "2015 December",
+    "dates": 2015,
     "url": "https://www.udacity.com/course/c-ud893-nd"
     },
     {
     "title": "Responsive Images",
     "school": "Udacity",
-    "dates": "2015 December",
+    "dates": 2015,
     "url": "https://www.udacity.com/course/responsive-images--ud882"
     },
     {
       "title": "Database Fundamentals",
       "school": "Microsoft Virtual Academy",
-      "dates": "2015 September",
+      "dates": 2015,
       "url": "https://mva.microsoft.com/"
     }
   ]
