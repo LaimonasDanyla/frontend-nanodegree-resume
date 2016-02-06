@@ -22,7 +22,7 @@ bio.display = function() {
   var formattedName = HTMLheaderName.replace("%data%", bio.name);
     $("#header").prepend(formattedName);
   var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-    $("#name").append(formattedRole.sup());
+    $("#name").append(formattedRole);
 
     var footerName = HTMLcontactGeneric.replace("%data%", bio.name);
       $("#footerContacts").append(footerName);
@@ -77,10 +77,10 @@ function inName(name) {
 // slice (0,1) is needed to take the first letter - 1 is determining the end
 //of slice
   return name[0].fontcolor("#f5ae23") +" "+ name[1].fontcolor("#f5ae23")
-  +" "+ roleStyle;
+  +" <br> "+ roleStyle;
   ;
   }
-$("#topContacts:last").append(internationalizeButton);
+$("#role").append(internationalizeButton);
 
 
 var work = {
