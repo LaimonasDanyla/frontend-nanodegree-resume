@@ -94,7 +94,7 @@ a {
 
 .welcome-message {
   font-style: italic;
-  font-size: 18px;
+  font-size: 20px;
   color: #f3f3f3;
   line-height: 28px;
 }
@@ -129,6 +129,7 @@ a {
 
 /* TODO: Replace with image later */
 #header {
+  background-image: url("http://lorempixel.com/image_output/abstract-q-g-1284-375-5.jpg");
   background-color: #484848;
 }
 
@@ -152,7 +153,7 @@ ul {
 .biopic {
   float: left;
   padding: 10px;
-  width: 200px;
+  width: 150px;
   display: none;
 }
 
@@ -166,6 +167,9 @@ span {
 
 #lets-connect {
   text-align: center;
+}
+#role {
+  font-size: 12px;
 }
 
 /* Media queries to handle various device widths */
@@ -189,8 +193,8 @@ span {
   .biopic {
     width: 150px;
   }
-  .welcome-message {
-    display: none;
+  #name, #role, .welcome-message {
+    text-align: center;
   }
 }
 
