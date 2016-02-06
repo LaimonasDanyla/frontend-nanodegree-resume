@@ -83,105 +83,6 @@ function inName(name) {
 $("#role").append(internationalizeButton);
 
 
-var work = {
-  "jobs": [
-    {
-    "employer": "Suomen Broiler Oy",
-    "title": "Representative for export markets",
-    "location": "Masku, Finland",
-    "dates": "2002-2015",
-    "description": "Responsible for sales, marketing and customer service"
-    },
-    {
-    "employer": "Sprendika Ltd.",
-    "title": "Company Manager, owner",
-    "location": "Kaunas, Lithuania",
-    "dates": "2005 - till now",
-    "description": "Sales, marketing and service of equipment"
-    }
-  ]
-}
-
-work.display = function() {
-for (job in work.jobs) {
-  $("#workExperience").append(HTMLworkStart);
-
-  var formattedEmployer = HTMLworkEmployer.replace
-   ("%data%", work.jobs[job].employer);
-
-  var formattedTitle = HTMLworkTitle.replace("%data%",
-   work.jobs[job].title);
-
-  var formattedEmployerTitle = formattedEmployer + formattedTitle;
-  $(".work-entry:last").append(formattedEmployerTitle);
-
-  var formattedLocation = HTMLworkLocation.replace("%data%",
-   work.jobs[job].location);
-  $(".work-entry:last").append(formattedLocation);
-
-  var formattedDates = HTMLworkDates.replace("%data%",
-   work.jobs[job].dates);
-  $(".work-entry:last").append(formattedDates);
-
-  var formattedDescription = HTMLworkDescription.replace("%data%",
-   work.jobs[job].description);
-  $(".work-entry:last").append(formattedDescription);
-  }
-}
-work.display();
-
-var projects = {
-  "project": [
-    {
-      "title": "P1: Build a Portfolio Site",
-      "dates": " 29 12 2015",
-      "description": "Development of responsive website on all devices \
-       using bootstrap, image file change based on viewport, off-canvas \
-       navigation, some simple javascript usage, some usage of polymers.",
-      "images": [
-        "images/sample1.jpg",
-        "images/r2.jpg",
-        "images/r3.jpg",
-        "images/r4.jpg",
-        "images/r5.jpg"
-      ]
-    },
-    {
-    "title": "Interactive resume",
-    "dates": "2016 January",
-    "description": "Interactive resume using HTML, JS, CSS",
-    "images": [
-      "http://lorempixel.com/image_output/city-q-c-400-400-5.jpg",
-      "http://lorempixel.com/image_output/abstract-q-c-400-400-1.jpg"
-      ]
-    }
-  ]
-}
-
-projects.display = function() {
-  for (index in projects.project) {
-    $("#projects").append(HTMLprojectStart);
-    var projectTitle = HTMLprojectTitle.replace("%data%",
-      projects.project[index].title);
-    $(".project-entry:last").append(projectTitle);
-    var projectDescription = HTMLprojectDescription.replace("%data%",
-      projects.project[index].description);
-    $(".project-entry:last").append(projectDescription);
-
-    if (projects.project[index].images.length > 0) {
-      for (image in projects.project[index].images) {
-        var projectImages = HTMLprojectImage.replace("%data%",
-          projects.project[index].images[image]);
-        $(".project-entry:last").append(projectImages);
-      }
-    }
-  }
-}
-projects.display(); //call the function above.
-
-
-
-
 var education = {
   "schools": [
     {
@@ -189,7 +90,7 @@ var education = {
     "location": "Kaunas, Lithuania",
     "degree": "M.Sc. Business Management and Administration (MBA)",
     "majors": ["Finances", "Marketing", "Management"],
-    "dates": 2006,
+    "dates": "2004-2006",
     "url": "www.ktu.edu"
     },
     {
@@ -197,7 +98,7 @@ var education = {
       "location": " ",
       "degree": "Intro to Programming NanoDegree",
       "majors": ["Python", "App developemnt"],
-      "dates": 2016,
+      "dates": "2015-2016",
       "url": "www.udacity.com"
     }
   ],
@@ -205,43 +106,43 @@ var education = {
     {
     "title": "JavaScript Basics",
     "school": "Udacity",
-    "dates": 2016,
+    "dates": "2016 January",
     "url": "https://www.udacity.com/course/c-ud804-nd"
     },
     {
     "title": "Linux Command Line Basics",
     "school": "Udacity",
-    "dates": 2016,
+    "dates": "2016 January",
     "url": "https://www.udacity.com/course/c-ud595/l-4575425132"
     },
     {
     "title": "How to Use Git and GitHub",
     "school": "Udacity",
-    "dates": 2016,
+    "dates": "2016 January",
     "url": "https://www.udacity.com/course/c-ud775"
     },
     {
     "title": "Intro to HTML and CSS",
     "school": "Udacity",
-    "dates": 2015,
+    "dates": "2015 October",
     "url": "https://www.udacity.com/course/c-ud304-nd"
     },
     {
     "title":"Responsive Web Design Fundamentals",
     "school": "Udacity",
-    "dates": 2015,
+    "dates": "2015 November",
     "url": "https://www.udacity.com/course/c-ud893-nd"
     },
     {
     "title": "Responsive Images",
     "school": "Udacity",
-    "dates": 2015,
+    "dates": "2015 November",
     "url": "https://www.udacity.com/course/responsive-images--ud882"
     },
     {
       "title": "Database Fundamentals",
       "school": "Microsoft Virtual Academy",
-      "dates": 2015,
+      "dates": "2015 September",
       "url": "https://mva.microsoft.com/"
     }
   ]
@@ -286,6 +187,103 @@ education.display = function() {
     }
 }
 education.display();
+
+
+var work = {
+  "jobs": [
+    {
+    "employer": "Suomen Broiler Oy",
+    "title": "Representative for export markets",
+    "location": "Masku, Finland",
+    "dates": "2002-2015",
+    "description": "Responsible for sales, marketing and customer service"
+    },
+    {
+    "employer": "Sprendika Ltd.",
+    "title": "Company Manager, owner",
+    "location": "Kaunas, Lithuania",
+    "dates": "2005 - in progress",
+    "description": "Sales, marketing and service of equipment"
+    }
+  ]
+}
+
+work.display = function() {
+for (job in work.jobs) {
+  $("#workExperience").append(HTMLworkStart);
+
+  var formattedEmployer = HTMLworkEmployer.replace
+   ("%data%", work.jobs[job].employer);
+
+  var formattedTitle = HTMLworkTitle.replace("%data%",
+   work.jobs[job].title);
+
+  var formattedEmployerTitle = formattedEmployer + formattedTitle;
+  $(".work-entry:last").append(formattedEmployerTitle);
+
+  var formattedLocation = HTMLworkLocation.replace("%data%",
+   work.jobs[job].location);
+  $(".work-entry:last").append(formattedLocation);
+
+  var formattedDates = HTMLworkDates.replace("%data%",
+   work.jobs[job].dates);
+  $(".work-entry:last").append(formattedDates);
+
+  var formattedDescription = HTMLworkDescription.replace("%data%",
+   work.jobs[job].description);
+  $(".work-entry:last").append(formattedDescription);
+  }
+}
+work.display();
+
+var projects = {
+  "project": [
+    {
+      "title": "P1: Build a Portfolio Site",
+      "dates": "2015 December",
+      "description": "Development of responsive website on all devices \
+       using bootstrap, image file change based on viewport, off-canvas \
+       navigation, some simple javascript usage, some usage of polymers.",
+      "images": [
+        "images/sample1.jpg",
+        "images/r2.jpg",
+        "images/r3.jpg",
+        "images/r4.jpg",
+        "images/r5.jpg"
+      ]
+    },
+    {
+    "title": "Sample pictures",
+    "dates": "2016",
+    "description": "Some sample images",
+    "images": [
+      "http://lorempixel.com/image_output/city-q-c-400-400-5.jpg",
+      "http://lorempixel.com/image_output/abstract-q-c-400-400-1.jpg"
+      ]
+    }
+  ]
+}
+
+projects.display = function() {
+  for (index in projects.project) {
+    $("#projects").append(HTMLprojectStart);
+    var projectTitle = HTMLprojectTitle.replace("%data%",
+      projects.project[index].title);
+    $(".project-entry:last").append(projectTitle);
+    var projectDescription = HTMLprojectDescription.replace("%data%",
+      projects.project[index].description);
+    $(".project-entry:last").append(projectDescription);
+
+    if (projects.project[index].images.length > 0) {
+      for (image in projects.project[index].images) {
+        var projectImages = HTMLprojectImage.replace("%data%",
+          projects.project[index].images[image]);
+        $(".project-entry:last").append(projectImages);
+      }
+    }
+  }
+}
+projects.display(); //call the function above.
 
 //Add Map
 $("#mapDiv").append(googleMap);
