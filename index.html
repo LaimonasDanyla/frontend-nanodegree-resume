@@ -1,28 +1,17 @@
 <!DOCTYPE html>
 
-<!--
-This is an HTML document. It contains information about how elements in the website
-are arranged. In other words, it describes the layout of a website.
-
-I can't wait to see the resumes you put together!
-
-Cameron Pittman, Udacity Course Developer
--->
-
-<!--
-The <head> of a website generally links to important resources the page will
-need to load. You'll see a lot of <link>s to CSS files for styles and
-<scripts> for JavaScript files to build interactions.
--->
 <head>
   <!-- This tells the browser how to read the document. -->
   <meta charset="utf-8">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
   <!-- Tells the browser what the title of this page should be. -->
   <title>Laimonas Danyla Resume</title>
 
   <!-- Load the page styles. -->
   <link href="css/style.css" rel="stylesheet">
+  <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap: Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <!-- Bootstrap: Latest compiled and minified JavaScript -->
@@ -47,12 +36,10 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   <script src="js/helper.js"></script>
 
   <!--
-  Uncomment the <script> tag below when you're ready to add an interactive
-  Google Map to your resume!
+  <script> tag below to add an interactive Google Map!
   -->
   <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
 
-  <meta name="viewport" content="width=device-width">
 </head>
 <body>
   <div id="main">
@@ -69,6 +56,31 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
       <hr>
     </div>
     <div style="clear: both;"></div>
+    <div class="container">
+     <!-- Static navbar -->
+     <nav class="navbar navbar-default" role="navigation">
+       <div class="container-fluid">
+         <div class="navbar-header">
+           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+             <span class="sr-only">Toggle navigation</span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+           </button>
+          </div>
+         <div id="navbar" class="navbar-collapse collapse">
+           <ul class="nav navbar-nav">
+             <li class="active"><a href="#workExperience">Work Experience</a></li>
+             <li><a href="#education">Education</a></li>
+             <li><a href="#projects">Projects</a></li>
+             <li><a href="#onlineClass">Online Classes</a></li>
+             <li><a href="#map">Map</a></li>
+           </ul>
+         </div><!--/.nav-collapse -->
+       </div><!--/.container-fluid -->
+     </nav>
+   </div> <!-- /container -->
+
     <div id="workExperience" class="gray">
       <h2>Work Experience</h2>
     </div>
@@ -87,6 +99,11 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
       </ul>
     </div>
   </div>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+  <script src="js/bootstrap.min.js"></script>
 
   <!--
   The next line tells the browser where to download the JavaScript file you'll be
@@ -141,6 +158,7 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     if(document.getElementById('map') === null) {
       document.getElementById('mapDiv').style.display = 'none';
     }
+
   </script>
 </body>
 </html>

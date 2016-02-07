@@ -107,37 +107,37 @@ var education = {
     "title": "JavaScript Basics",
     "school": "Udacity",
     "dates": 2016,
-    "url": "https://www.udacity.com/course/c-ud804-nd"
+    "url": "https://www.udacity.com/courses/ud804"
     },
     {
     "title": "Linux Command Line Basics",
     "school": "Udacity",
     "dates": 2016,
-    "url": "https://www.udacity.com/course/c-ud595/l-4575425132"
+    "url": "https://www.udacity.com/courses/ud595"
     },
     {
     "title": "How to Use Git and GitHub",
     "school": "Udacity",
     "dates": 2016,
-    "url": "https://www.udacity.com/course/c-ud775"
+    "url": "https://www.udacity.com/courses/ud775"
     },
     {
     "title": "Intro to HTML and CSS",
     "school": "Udacity",
     "dates": 2015,
-    "url": "https://www.udacity.com/course/c-ud304-nd"
+    "url": "https://www.udacity.com/courses/ud304"
     },
     {
     "title":"Responsive Web Design Fundamentals",
     "school": "Udacity",
     "dates": 2015,
-    "url": "https://www.udacity.com/course/c-ud893-nd"
+    "url": "https://www.udacity.com/courses/ud893"
     },
     {
     "title": "Responsive Images",
     "school": "Udacity",
     "dates": 2015,
-    "url": "https://www.udacity.com/course/responsive-images--ud882"
+    "url": "https://www.udacity.com/courses/ud882"
     },
     {
       "title": "Database Fundamentals",
@@ -257,8 +257,8 @@ var projects = {
     "dates": "2016",
     "description": "Some sample images",
     "images": [
-      "http://lorempixel.com/image_output/city-q-c-400-400-5.jpg",
-      "http://lorempixel.com/image_output/abstract-q-c-400-400-1.jpg"
+      "http://lorempixel.com/image_output/nature-q-c-1000-400-2.jpg",
+      "http://lorempixel.com/image_output/abstract-q-c-1000-400-3.jpg"
       ]
     }
   ]
@@ -284,6 +284,11 @@ projects.display = function() {
   }
 }
 projects.display(); //call the function above.
+
+
+
+
+
 
 //Add Map
 $("#mapDiv").append(googleMap);

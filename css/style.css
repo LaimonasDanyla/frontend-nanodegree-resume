@@ -14,6 +14,10 @@ h6 {
   font-family: "Roboto", sans-serif;
 }
 
+.container {
+  float: left;
+}
+
 .clear-fix {
   overflow: auto;
 }
@@ -129,7 +133,7 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-image: url("http://lorempixel.com/image_output/abstract-q-g-1284-375-5.jpg");
+  background-image: url("http://lorempixel.com/image_output/abstract-q-g-1284-375-6.jpg");
   background-color: #484848;
 }
 
@@ -159,6 +163,8 @@ ul {
 
 img {
   padding: 10px;
+  width: 100%;
+  height: auto;
 }
 
 span {
@@ -170,6 +176,13 @@ span {
 }
 #role {
   font-size: 12px;
+}
+
+#onlineTitle {
+  font-weight: bold;
+}
+#onlineClass {
+  padding-left: 0px;
 }
 
 button {
