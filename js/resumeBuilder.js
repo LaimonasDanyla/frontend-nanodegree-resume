@@ -42,15 +42,28 @@ bio.display = function() {
     var formattedLocation = HTMLlocation.replace("%data%",
         bio.contacts.location);
     $("#footerContacts:last").append(formattedLocation);
-
+    /*
     if (bio.skills.length > 0) {
         $("#header").append(HTMLskillsStart);
         for (skill in bio.skills) {
-            var formattedSkill = HTMLskills.replace("%data%",
+          var formattedSkill = HTMLskills.replace("%data%",
                 bio.skills[skill]);
             $("#skills:last").append(formattedSkill);
         }
+    }*/
+    //BETTER WAY  - WITH SOME HELP FROM FORUM
+    var mySkills = bio.skills;
+    if (mySkills.length > 0) {
+      $("#header").append(HTMLskillsStart);
+      mySkills.forEach(function(item)
+      {
+        var formattedSkill = HTMLskills.replace("%data%", item);
+        //console.log(formattedSkill);
+      $("#skills:last").append(formattedSkill);
+    });
     }
+
+
     if (bio.bioPic.length > 0) {
         var formattedPic = HTMLbioPic.replace("%data%",
             bio.bioPic);
@@ -63,6 +76,18 @@ bio.display = function() {
     }
 };
 bio.display();
+/*
+bio.display = function() {
+  var bioSkills = bio.skills;
+  bioSkills.forEach(addBioSkills);
+  $("#header").append(HTMLskillsStart);
+  function addBioSkills(skill) {
+    skillName = HTMLskills.replace("%data", bio.skills);
+    $("#skills:last").append(skillName)
+  }
+
+bio.display();
+*/
 
 //add function to make Surname all in caps after Internationalize button click
 function inName(name) {
@@ -179,7 +204,7 @@ education.display();
 
 /*
 A BETTER WAY TO MAKE A FUNCTION ABOVE - FROM UDACITY DISCUSSION FORUM
-REPLACING FOR IN WIHT forEach. 
+REPLACING FOR IN WIHT forEach.
 */
 education.display = function() {
   var formals = education.schools;
