@@ -41,23 +41,13 @@ bio.display = function() {
     var formattedLocation = HTMLlocation.replace("%data%",
         bio.contacts.location);
     $("#footerContacts:last").append(formattedLocation);
-    /*
-    if (bio.skills.length > 0) {
-        $("#header").append(HTMLskillsStart);
-        for (skill in bio.skills) {
-          var formattedSkill = HTMLskills.replace("%data%",
-                bio.skills[skill]);
-            $("#skills:last").append(formattedSkill);
-        }
-    }*/
-    //BETTER WAY  - WITH SOME HELP FROM FORUM
+
     var mySkills = bio.skills;
     if (mySkills.length > 0) {
       $("#header").append(HTMLskillsStart);
       mySkills.forEach(function(item)
       {
         var formattedSkill = HTMLskills.replace("%data%", item);
-        //console.log(formattedSkill);
       $("#skills:last").append(formattedSkill);
     });
     }
@@ -75,18 +65,6 @@ bio.display = function() {
     }
 };
 bio.display();
-/*
-bio.display = function() {
-  var bioSkills = bio.skills;
-  bioSkills.forEach(addBioSkills);
-  $("#header").append(HTMLskillsStart);
-  function addBioSkills(skill) {
-    skillName = HTMLskills.replace("%data", bio.skills);
-    $("#skills:last").append(skillName)
-  }
-
-bio.display();
-*/
 
 //add function to make Surname all in caps after Internationalize button click
 function inName(name) {
@@ -159,52 +137,7 @@ var education = {
         "url": "https://mva.microsoft.com/"
     }]
 };
-/*
-education.display = function() {
-    for (school in education.schools) {
-        $("#education").append(HTMLschoolStart);
-        var formattedSchool = HTMLschoolName.replace("%data%",
-            education.schools[school].name);
-        $(".education-entry:last").append(formattedSchool);
-        var formattedDegree = HTMLschoolDegree.replace("%data%",
-            education.schools[school].degree);
-        $(".education-entry:last").append(formattedDegree);
-        var formattedDates = HTMLschoolDates.replace("%data%",
-            education.schools[school].dates);
-        $(".education-entry:last").append(formattedDates);
-        var formattedLocation = HTMLschoolLocation.replace("%data%",
-            education.schools[school].location);
-        $(".education-entry:last").append(formattedLocation);
-        var formattedMajor = HTMLschoolMajor.replace("%data%",
-            education.schools[school].majors);
-        $(".education-entry:last").append(formattedMajor);
-    }
 
-    if (education.onlineCourses.length > 0) {
-        $(".education-entry:last").append(HTMLonlineClasses);
-        for (course in education.onlineCourses) {
-            var formattedTitle = HTMLonlineTitle.replace("%data%",
-                education.onlineCourses[course].title);
-            $(".education-entry:last").append(formattedTitle);
-            var formattedSchool = HTMLonlineSchool.replace("%data%",
-                education.onlineCourses[course].school);
-            $(".education-entry:last").append(formattedSchool);
-            var formattedDates = HTMLonlineDates.replace("%data%",
-                education.onlineCourses[course].dates);
-            $(".education-entry:last").append(formattedDates);
-            var formattedURL = HTMLonlineURL.replace("%data%",
-                education.onlineCourses[course].url);
-            $(".education-entry:last").append(formattedURL);
-        }
-    }
-};
-education.display();
-*/
-
-/*
-A BETTER WAY TO MAKE A FUNCTION ABOVE - FROM UDACITY DISCUSSION FORUM
-REPLACING FOR IN WIHT forEach.
-*/
 education.display = function() {
   var formals = education.schools;
   var onlines = education.onlineCourses;
@@ -282,35 +215,8 @@ work.display = function() {
   }
 };
 work.display();
-/*
-work.display = function() {
-    for (job in work.jobs) {
-        $("#workExperience").append(HTMLworkStart);
 
-        var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[
-            job].employer);
 
-        var formattedTitle = HTMLworkTitle.replace("%data%",
-            work.jobs[job].title);
-
-        var formattedEmployerTitle = formattedEmployer + formattedTitle;
-        $(".work-entry:last").append(formattedEmployerTitle);
-
-        var formattedLocation = HTMLworkLocation.replace("%data%",
-            work.jobs[job].location);
-        $(".work-entry:last").append(formattedLocation);
-
-        var formattedDates = HTMLworkDates.replace("%data%",
-            work.jobs[job].dates);
-        $(".work-entry:last").append(formattedDates);
-
-        var formattedDescription = HTMLworkDescription.replace("%data%",
-            work.jobs[job].description);
-        $(".work-entry:last").append(formattedDescription);
-    }
-}
-work.display();
-*/
 var projects = {
     "project": [{
         "title": "P1: Build a Portfolio Site",
@@ -351,14 +257,6 @@ projects.display = function() {
     $(".project-entry:last").append(dates);
     $(".project-entry:last").append(description);
 
-    /*
-    item.images.forEach(function(img)
-    {
-      image = HTMLprojectImage.replace("%data%", img);
-    });
-    $(".project-entry:last").append(image);
-    */
-
     if (item.images.length > 0) {
         for (var indexCount = 0; indexCount < item.images.length; indexCount++) {
             var projectImages = HTMLprojectImage.replace("%data%",
@@ -369,42 +267,6 @@ projects.display = function() {
     }
 };
 projects.display();
-/*
-var mySkills = bio.skills;
-if (mySkills.length > 0) {
-  $("#header").append(HTMLskillsStart);
-  mySkills.forEach(function(item)
-  {
-    var formattedSkill = HTMLskills.replace("%data%", item);
-    //console.log(formattedSkill);
-  $("#skills:last").append(formattedSkill);
-});
-*/
-
-/*
-projects.display = function() {
-    for (index in projects.project) {
-        $("#projects").append(HTMLprojectStart);
-        var projectTitle = HTMLprojectTitle.replace("%data%",
-            projects.project[index].title);
-        $(".project-entry:last").append(projectTitle);
-        var projectDescription = HTMLprojectDescription.replace("%data%",
-            projects.project[index].description);
-        $(".project-entry:last").append(projectDescription);
-
-        if (projects.project[index].images.length > 0) {
-            for (image in projects.project[index].images) {
-                var projectImages = HTMLprojectImage.replace("%data%",
-                    projects.project[index].images[image]);
-                $(".project-entry:last").append(projectImages);
-            }
-        }
-    }
-}
-projects.display(); //call the function above.
-*/
-
-
 
 //Add Map
 $("#mapDiv").append(googleMap);
