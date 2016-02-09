@@ -26,7 +26,6 @@ bio.display = function() {
 
     var footerName = HTMLcontactGeneric.replace("%data%", bio.name);
     $("#footerContacts").append(footerName);
-
     var formattedMobile = HTMLmobile.replace("%data%",
         bio.contacts.mobile);
     $("#footerContacts:last, #topContacts:last").append(formattedMobile);
@@ -258,8 +257,32 @@ var work = {
         "dates": "2005 - in progress",
         "description": "Sales, marketing and service of equipment"
     }]
-}
+};
 
+work.display = function() {
+  myWork = work.jobs;
+    var employer, title, employerTitle, location, dates, description;
+    myWork.forEach(addMyWork);
+
+
+  function addMyWork(works) {
+    employer = HTMLworkEmployer.replace("%data%", works.employer);
+    title = HTMLworkTitle.replace("%data%", works.title);
+    employerTitle = employer + title;
+    location = HTMLworkLocation.replace("%data%", works.location);
+    dates = HTMLworkDates.replace("%data%", works.dates);
+    description = HTMLworkDescription.replace("%data%", works.description);
+    $("#workExperience").append(HTMLworkStart);
+    //$(".work-entry:last").append(employer);
+    //$(".work-entry:last").append(title);
+    $(".work-entry:last").append(employerTitle);
+    $(".work-entry:last").append(location);
+    $(".work-entry:last").append(dates);
+    $(".work-entry:last").append(description);
+  }
+};
+work.display();
+/*
 work.display = function() {
     for (job in work.jobs) {
         $("#workExperience").append(HTMLworkStart);
@@ -287,7 +310,7 @@ work.display = function() {
     }
 }
 work.display();
-
+*/
 var projects = {
     "project": [{
         "title": "P1: Build a Portfolio Site",
@@ -311,8 +334,54 @@ var projects = {
             "http://lorempixel.com/image_output/abstract-q-c-1000-400-3.jpg"
         ]
     }]
-}
+};
 
+projects.display = function() {
+  var myProjects = projects.project;
+  var title, dates, description;
+
+  myProjects.forEach(addMyProject);
+  function addMyProject(item) {
+    title = HTMLprojectTitle.replace("%data%", item.title);
+    dates = HTMLprojectDates.replace("%data%", item.dates);
+    description = HTMLprojectDescription.replace("%data%", item.description);
+
+    $("#projects").append(HTMLprojectStart);
+    $(".project-entry:last").append(title);
+    $(".project-entry:last").append(dates);
+    $(".project-entry:last").append(description);
+
+    /*
+    item.images.forEach(function(img)
+    {
+      image = HTMLprojectImage.replace("%data%", img);
+    });
+    $(".project-entry:last").append(image);
+    */
+
+    if (item.images.length > 0) {
+        for (var indexCount = 0; indexCount < item.images.length; indexCount++) {
+            var projectImages = HTMLprojectImage.replace("%data%",
+                item.images[indexCount]);
+            $(".project-entry:last").append(projectImages);
+          }
+      }
+    }
+};
+projects.display();
+/*
+var mySkills = bio.skills;
+if (mySkills.length > 0) {
+  $("#header").append(HTMLskillsStart);
+  mySkills.forEach(function(item)
+  {
+    var formattedSkill = HTMLskills.replace("%data%", item);
+    //console.log(formattedSkill);
+  $("#skills:last").append(formattedSkill);
+});
+*/
+
+/*
 projects.display = function() {
     for (index in projects.project) {
         $("#projects").append(HTMLprojectStart);
@@ -333,7 +402,7 @@ projects.display = function() {
     }
 }
 projects.display(); //call the function above.
-
+*/
 
 
 
