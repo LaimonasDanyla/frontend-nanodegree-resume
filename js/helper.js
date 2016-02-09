@@ -1,33 +1,49 @@
-/*
-
-This file contains all of the code running in the background that makes resumeBuilder.js possible. We call these helper functions because they support your code in this course.
-
-Don't worry, you'll learn what's going on in this file throughout the course. You won't need to make any changes to it until you start experimenting with inserting a Google Map in Problem Set 3.
-
-Cameron Pittman
-*/
-
 
 /*
 These are HTML strings. As part of the course, you'll be using JavaScript functions
 replace the %data% placeholder text you see in them.
 */
-var HTMLheaderName = '<h1 id="name"><span class="orange-text">%data%</span></h1>';
-var HTMLheaderRole = '<div id="role"><span class="white-text">%data%</span></div>';
+var HTMLheaderName = '<h1 id="name">' +
+'<span class="orange-text">%data%</span></h1>';
+var HTMLheaderRole = '<div id="role">' +
+'<span class="white-text">%data%</span></div>';
 
-var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">contact</span><span class="white-text">%data%</span></li>';
-var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>';
-var HTMLemail = '<li class="flex-item"><span class="orange-text">email</span><span class="white-text">%data%</span></li>';
-var HTMLtwitter = '<li class="flex-item"><span class="orange-text">twitter</span><span class="white-text">%data%</span></li>';
-var HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><span class="white-text">%data%</span></li>';
-var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span class="white-text">%data%</span></li>';
-var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
+var HTMLcontactGeneric = '<li class="flex-item">' +
+'<span class="orange-text">contact</span> ' +
+'<span class="white-text">%data%</span></li>';
+
+var HTMLmobile = '<li class="flex-item">' +
+'<span class="orange-text">mobile</span>' +
+'<span class="white-text">%data%</span></li>';
+
+var HTMLemail = '<li class="flex-item">' +
+'<span class="orange-text">email</span>' +
+'<span class="white-text">%data%</span></li>';
+
+var HTMLtwitter = '<li class="flex-item">' +
+'<span class="orange-text">twitter</span>' +
+'<span class="white-text">%data%</span></li>';
+
+var HTMLgithub = '<li class="flex-item">' +
+'<span class="orange-text">github</span>' +
+'<span class="white-text">%data%</span></li>';
+
+var HTMLblog = '<li class="flex-item">' +
+'<span class="orange-text">blog</span>' +
+'<span class="white-text">%data%</span></li>';
+
+var HTMLlocation = '<li class="flex-item">' +
+'<span class="orange-text">location</span>' +
+'<span class="white-text">%data%</span></li>';
 
 var HTMLbioPic = '<img src="%data%" alt="my photo" class="biopic">';
 var HTMLwelcomeMsg = '<span class="welcome-message orange-text">%data%</span>';
 
-var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
-var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
+var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3>' +
+'<ul id="skills" class="flex-box"></ul>';
+
+var HTMLskills = '<li class="flex-item">' +
+'<span class="white-text">%data%</span></li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
 var HTMLworkEmployer = '<a href="#">%data%';
@@ -98,12 +114,13 @@ $(document).click(function(loc) {
 
 
 /*
-This is the fun part. Here's where we generate the custom Google Map for the website.
+This is the fun part. Here's where we generate the custom Google Map
+for the website.
 See the documentation below for more details.
 https://developers.google.com/maps/documentation/javascript/reference
 */
-var map;    // declares a global map variable
 
+var map;    // declares a global map variable
 
 /*
 Start here! initializeMap() is called when page is loaded.
@@ -121,7 +138,6 @@ function initializeMap() {
   appended to #mapDiv in resumeBuilder.js.
   */
   map = new google.maps.Map(document.querySelector('#map'), mapOptions);
-
 
   /*
   locationFinder() returns an array of every location string from the JSONs
@@ -178,8 +194,9 @@ function initializeMap() {
     // or hover over a pin on a map. They usually contain more information
     // about a location.
     var contentString = '<div id="mapcontent">'  +
-    '<p>South West Finland <a href="https://en.wikipedia.org/wiki/Southwest_Finland"</a>' +
-    '</div>'
+    '<p>South West Finland' +
+    '<a href="https://en.wikipedia.org/wiki/Southwest_Finland"</a>' +
+    '</div>';
 
     var infoWindow = new google.maps.InfoWindow({
       content: name
@@ -211,12 +228,13 @@ function initializeMap() {
   }
 
   /*
-  pinPoster(locations) takes in the array of locations created by locationFinder()
-  and fires off Google place searches for each location
+  pinPoster(locations) takes in the array of locations created by
+  locationFinder() and fires off Google place searches for each location
   */
   function pinPoster(locations) {
 
-    // creates a Google place search service object. PlacesService does the work of
+    // creates a Google place search service object.
+    //PlacesService does the work of
     // actually searching for location data.
     var service = new google.maps.places.PlacesService(map);
 

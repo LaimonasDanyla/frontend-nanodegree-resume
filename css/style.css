@@ -14,10 +14,6 @@ h6 {
   font-family: "Roboto", sans-serif;
 }
 
-.container {
-  float: left;
-}
-
 .clear-fix {
   overflow: auto;
 }

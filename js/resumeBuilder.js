@@ -1,4 +1,4 @@
- var bio = {
+var bio = {
     "name": "Laimonas Danyla",
     "role": "Web Developer",
 
@@ -44,14 +44,12 @@ bio.display = function() {
 
     var mySkills = bio.skills;
     if (mySkills.length > 0) {
-      $("#header").append(HTMLskillsStart);
-      mySkills.forEach(function(item)
-      {
-        var formattedSkill = HTMLskills.replace("%data%", item);
-      $("#skills:last").append(formattedSkill);
-    });
+        $("#header").append(HTMLskillsStart);
+        mySkills.forEach(function(item) {
+            var formattedSkill = HTMLskills.replace("%data%", item);
+            $("#skills:last").append(formattedSkill);
+        });
     }
-
 
     if (bio.bioPic.length > 0) {
         var formattedPic = HTMLbioPic.replace("%data%",
@@ -66,6 +64,7 @@ bio.display = function() {
 };
 bio.display();
 
+
 //add function to make Surname all in caps after Internationalize button click
 function inName(name) {
     var intlName = bio.name;
@@ -75,7 +74,7 @@ function inName(name) {
     console.log(name);
     name[1] = name[1].toUpperCase();
     name[0] = name[0].slice(0, 1).toUpperCase() +
-     name[0].slice(1).toLowerCase();
+        name[0].slice(1).toLowerCase();
     // slice (0,1) is needed to take the first letter - 1 is determining the end
     //of slice
     return name[0].fontcolor("#f5ae23") + " " + name[1].fontcolor("#f5ae23") +
@@ -139,42 +138,42 @@ var education = {
 };
 
 education.display = function() {
-  var formals = education.schools;
-  var onlines = education.onlineCourses;
-  var name, degree, dates, location, major, title, school, url;
-  formals.forEach(addFormalSchool);
+    var formals = education.schools;
+    var onlines = education.onlineCourses;
+    var name, degree, dates, location, major, title, school, url;
+    formals.forEach(addFormalSchool);
 
-  $('#education').append(HTMLonlineClasses);
-  onlines.forEach(addOnlineClasses);
+    $('#education').append(HTMLonlineClasses);
+    onlines.forEach(addOnlineClasses);
 
-  function addFormalSchool(school) {
-    name = HTMLschoolName.replace('%data%', school.name);
-    degree = HTMLschoolDegree.replace('%data%', school.degree);
-    dates = HTMLschoolDates.replace('%data%', school.dates);
-    location = HTMLschoolLocation.replace('%data%', school.location);
-    major = HTMLschoolMajor.replace('%data%', school.majors);
+    function addFormalSchool(school) {
+        name = HTMLschoolName.replace('%data%', school.name);
+        degree = HTMLschoolDegree.replace('%data%', school.degree);
+        dates = HTMLschoolDates.replace('%data%', school.dates);
+        location = HTMLschoolLocation.replace('%data%', school.location);
+        major = HTMLschoolMajor.replace('%data%', school.majors);
 
-    $('#education').append(HTMLschoolStart);
-    $('.education-entry:last').append(name + degree);
-    $('.education-entry:last').append(dates);
-    $('.education-entry:last').append(location);
-    $('.education-entry:last').append(major);
-  }
+        $('#education').append(HTMLschoolStart);
+        $('.education-entry:last').append(name + degree);
+        $('.education-entry:last').append(dates);
+        $('.education-entry:last').append(location);
+        $('.education-entry:last').append(major);
+    }
 
-  function addOnlineClasses(course) {
-    title = HTMLonlineTitle.replace('%data%', course.title);
-    school = HTMLonlineSchool.replace('%data%', course.school);
-    dates = HTMLonlineDates.replace('%data%', course.dates);
-    url = HTMLonlineURL.replace('%data%', course.url);
+    function addOnlineClasses(course) {
+        title = HTMLonlineTitle.replace('%data%', course.title);
+        school = HTMLonlineSchool.replace('%data%', course.school);
+        dates = HTMLonlineDates.replace('%data%', course.dates);
+        url = HTMLonlineURL.replace('%data%', course.url);
 
-    $('#education').append(HTMLschoolStart);
-    $('.education-entry:last').append(title + school);
-    $('.education-entry:last').append(dates);
-    $('.education-entry:last').append(url);
-
-  }
+        $('#education').append(HTMLschoolStart);
+        $('.education-entry:last').append(title + school);
+        $('.education-entry:last').append(dates);
+        $('.education-entry:last').append(url);
+    }
 };
 education.display();
+
 
 var work = {
     "jobs": [{
@@ -193,26 +192,24 @@ var work = {
 };
 
 work.display = function() {
-  myWork = work.jobs;
+    myWork = work.jobs;
     var employer, title, employerTitle, location, dates, description;
+
     myWork.forEach(addMyWork);
+    function addMyWork(works) {
+        employer = HTMLworkEmployer.replace("%data%", works.employer);
+        title = HTMLworkTitle.replace("%data%", works.title);
+        employerTitle = employer + title;
+        location = HTMLworkLocation.replace("%data%", works.location);
+        dates = HTMLworkDates.replace("%data%", works.dates);
+        description = HTMLworkDescription.replace("%data%", works.description);
 
-
-  function addMyWork(works) {
-    employer = HTMLworkEmployer.replace("%data%", works.employer);
-    title = HTMLworkTitle.replace("%data%", works.title);
-    employerTitle = employer + title;
-    location = HTMLworkLocation.replace("%data%", works.location);
-    dates = HTMLworkDates.replace("%data%", works.dates);
-    description = HTMLworkDescription.replace("%data%", works.description);
-    $("#workExperience").append(HTMLworkStart);
-    //$(".work-entry:last").append(employer);
-    //$(".work-entry:last").append(title);
-    $(".work-entry:last").append(employerTitle);
-    $(".work-entry:last").append(location);
-    $(".work-entry:last").append(dates);
-    $(".work-entry:last").append(description);
-  }
+        $("#workExperience").append(HTMLworkStart);
+        $(".work-entry:last").append(employerTitle);
+        $(".work-entry:last").append(location);
+        $(".work-entry:last").append(dates);
+        $(".work-entry:last").append(description);
+    }
 };
 work.display();
 
@@ -221,9 +218,9 @@ var projects = {
     "project": [{
         "title": "P1: Build a Portfolio Site",
         "dates": "2015 December",
-        "description": "Development of responsive website on all devices \
-       using bootstrap, image file change based on viewport, off-canvas \
-       navigation, some simple javascript usage, some usage of polymers.",
+        "description": "Development of responsive website on all devices " +
+        "using bootstrap, image file change based on viewport, off-canvas " +
+        "navigation, some simple javascript usage, some usage of polymers.",
         "images": [
             "images/sample1.jpg",
             "images/r2.jpg",
@@ -243,30 +240,32 @@ var projects = {
 };
 
 projects.display = function() {
-  var myProjects = projects.project;
-  var title, dates, description;
+    var myProjects = projects.project;
+    var title, dates, description;
 
-  myProjects.forEach(addMyProject);
-  function addMyProject(item) {
-    title = HTMLprojectTitle.replace("%data%", item.title);
-    dates = HTMLprojectDates.replace("%data%", item.dates);
-    description = HTMLprojectDescription.replace("%data%", item.description);
+    myProjects.forEach(addMyProject);
+    function addMyProject(item) {
+        title = HTMLprojectTitle.replace("%data%", item.title);
+        dates = HTMLprojectDates.replace("%data%", item.dates);
+        description = HTMLprojectDescription.replace("%data%", item.description);
 
-    $("#projects").append(HTMLprojectStart);
-    $(".project-entry:last").append(title);
-    $(".project-entry:last").append(dates);
-    $(".project-entry:last").append(description);
+        $("#projects").append(HTMLprojectStart);
+        $(".project-entry:last").append(title);
+        $(".project-entry:last").append(dates);
+        $(".project-entry:last").append(description);
 
-    if (item.images.length > 0) {
-        for (var indexCount = 0; indexCount < item.images.length; indexCount++) {
-            var projectImages = HTMLprojectImage.replace("%data%",
-                item.images[indexCount]);
-            $(".project-entry:last").append(projectImages);
-          }
-      }
+        if (item.images.length > 0) {
+            for (var indexCount = 0;
+              indexCount < item.images.length; indexCount++) {
+                var projectImages = HTMLprojectImage.replace("%data%",
+                    item.images[indexCount]);
+                $(".project-entry:last").append(projectImages);
+            }
+        }
     }
 };
 projects.display();
+
 
 //Add Map
 $("#mapDiv").append(googleMap);
