@@ -195,6 +195,18 @@ button:hover {
   font-weight: bold;
 }
 
+#map {
+  display: block;
+  height: 100%;
+  margin: 0 5%;
+}
+
+#mapDiv {
+  height: 400px;
+  width: 100%;
+  padding-bottom: 5%;
+}
+
 /* Media queries to handle various device widths */
 
 @media only screen and (max-width: 1024px) {
@@ -218,26 +230,27 @@ button:hover {
     width: 150px;
   }
 
-  #name, #role, .welcome-message {
-    text-align: left;
+  button {
+    float: right;
+    width: auto;
+    height: auto;
+    position: relative;
+
   }
 
-  li.flex-item {
+  #topContacts li.flex-item {
     width: 100%;
     text-align: left;
   }
-}
 
-#map {
-  display: block;
-  height: 100%;
-  margin: 0 5%;
-}
+  #footerContacts li.flex-item {
+    width: 100%;
+    text-align: center;
+  }
 
-#mapDiv {
-  height: 400px;
-  width: 100%;
-  padding-bottom: 5%;
+  #map {
+    height: 85%;
+  }
 }
 
 @media only screen and (min-width: 750px) {
