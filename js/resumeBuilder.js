@@ -89,50 +89,50 @@ var education = {
         "location": "Kaunas, Lithuania",
         "degree": "M.Sc. Business Management and Administration (MBA)",
         "majors": ["Finances", "Marketing", "Management"],
-        "dates": 2006,
+        "dates": "2006",
         "url": "www.ktu.edu"
     }, {
         "name": "Udacity",
         "location": " ",
         "degree": "Intro to Programming NanoDegree",
         "majors": ["Python", "App developemnt"],
-        "dates": 2016,
+        "dates": "2016",
         "url": "www.udacity.com"
     }],
     "onlineCourses": [{
         "title": "JavaScript Basics",
         "school": "Udacity",
-        "dates": 2016,
+        "date": "2016",
         "url": "https://www.udacity.com/courses/ud804"
     }, {
         "title": "Linux Command Line Basics",
         "school": "Udacity",
-        "dates": 2016,
+        "date": "2016",
         "url": "https://www.udacity.com/courses/ud595"
     }, {
         "title": "How to Use Git and GitHub",
         "school": "Udacity",
-        "dates": 2016,
+        "date": "2016",
         "url": "https://www.udacity.com/courses/ud775"
     }, {
         "title": "Intro to HTML and CSS",
         "school": "Udacity",
-        "dates": 2015,
+        "date": "2015",
         "url": "https://www.udacity.com/courses/ud304"
     }, {
         "title": "Responsive Web Design Fundamentals",
         "school": "Udacity",
-        "dates": 2015,
+        "date": "2015",
         "url": "https://www.udacity.com/courses/ud893"
     }, {
         "title": "Responsive Images",
         "school": "Udacity",
-        "dates": 2015,
+        "date": "2015",
         "url": "https://www.udacity.com/courses/ud882"
     }, {
         "title": "Database Fundamentals",
         "school": "Microsoft Virtual Academy",
-        "dates": 2015,
+        "date": "2015",
         "url": "https://mva.microsoft.com/"
     }]
 };
@@ -163,12 +163,12 @@ education.display = function() {
     function addOnlineClasses(course) {
         title = HTMLonlineTitle.replace('%data%', course.title);
         school = HTMLonlineSchool.replace('%data%', course.school);
-        dates = HTMLonlineDates.replace('%data%', course.dates);
+        dates = HTMLonlineDates.replace('%data%', course.date);
         url = HTMLonlineURL.replace('%data%', course.url);
 
         $('#education').append(HTMLschoolStart);
         $('.education-entry:last').append(title + school);
-        $('.education-entry:last').append(dates);
+        $('.education-entry:last').append(date);
         $('.education-entry:last').append(url);
     }
 };
