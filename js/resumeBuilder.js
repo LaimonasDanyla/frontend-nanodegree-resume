@@ -15,7 +15,7 @@ var bio = {
         "Java Script",
         "Python basics"
     ],
-    "bioPic": "images/me2.jpg"
+    "biopic": "images/me2.jpg"
 };
 
 bio.display = function() {
@@ -51,9 +51,9 @@ bio.display = function() {
         });
     }
 
-    if (bio.bioPic.length > 0) {
-        var formattedPic = HTMLbioPic.replace("%data%",
-            bio.bioPic);
+    if (bio.biopic.length > 0) {
+        var formattedPic = HTMLbiopic.replace("%data%",
+            bio.biopic);
         $("#skills-h3").append(formattedPic);
     }
     if (bio.welcomeMessage.length > 0) {
