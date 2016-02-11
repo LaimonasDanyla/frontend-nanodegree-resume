@@ -163,7 +163,7 @@ education.display = function() {
     function addOnlineClasses(course) {
         title = HTMLonlineTitle.replace('%data%', course.title);
         school = HTMLonlineSchool.replace('%data%', course.school);
-        dates = HTMLonlineDates.replace('%data%', course.date);
+        date = HTMLonlineDates.replace('%data%', course.date);
         url = HTMLonlineURL.replace('%data%', course.url);
 
         $('#education').append(HTMLschoolStart);
@@ -215,7 +215,7 @@ work.display();
 
 
 var projects = {
-    "project": [{
+    "projects": [{
         "title": "P1: Build a Portfolio Site",
         "dates": "2015 December",
         "description": "Development of responsive website on all devices " +
@@ -240,7 +240,7 @@ var projects = {
 };
 
 projects.display = function() {
-    var myProjects = projects.project;
+    var myProjects = projects.projects;
     var title, dates, description;
 
     myProjects.forEach(addMyProject);
