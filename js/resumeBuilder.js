@@ -98,7 +98,7 @@ var education = {
         "url": "www.ktu.edu"
     }, {
         "name": "Udacity",
-        "location": " ",
+        "location": "Online, USA",
         "degree": "Intro to Programming NanoDegree",
         "majors": ["Python", "App developemnt"],
         "dates": "2016",
@@ -147,9 +147,10 @@ education.display = function() {
     var onlines = education.onlineCourses;
     var name, degree, dates, location, major, title, school, url;
     var data = '%data%';
+    var $education = $('#education');
 
     formals.forEach(addFormalSchool);
-    $('#education').append(HTMLonlineClasses);
+    $education.append(HTMLonlineClasses);
 
     onlines.forEach(addOnlineClasses);
 
@@ -160,7 +161,7 @@ education.display = function() {
         location = HTMLschoolLocation.replace(data, school.location);
         major = HTMLschoolMajor.replace(data, school.majors);
 
-        $('#education').append(HTMLschoolStart);
+        $education.append(HTMLschoolStart);
         $('.education-entry:last').append(name + degree);
         $('.education-entry:last').append(dates);
         $('.education-entry:last').append(location);
