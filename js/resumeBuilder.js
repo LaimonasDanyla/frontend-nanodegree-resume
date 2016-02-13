@@ -249,12 +249,13 @@ var projects = {
 projects.display = function() {
     var myProjects = projects.projects;
     var title, dates, description;
+    var data = "%data%";
 
     myProjects.forEach(addMyProject);
     function addMyProject(item) {
-        title = HTMLprojectTitle.replace("%data%", item.title);
-        dates = HTMLprojectDates.replace("%data%", item.dates);
-        description = HTMLprojectDescription.replace("%data%", item.description);
+        title = HTMLprojectTitle.replace(data, item.title);
+        dates = HTMLprojectDates.replace(data, item.dates);
+        description = HTMLprojectDescription.replace(data, item.description);
 
         $("#projects").append(HTMLprojectStart);
         $(".project-entry:last").append(title);
@@ -264,7 +265,7 @@ projects.display = function() {
         if (item.images.length > 0) {
             for (var indexCount = 0;
               indexCount < item.images.length; indexCount++) {
-                var projectImages = HTMLprojectImage.replace("%data%",
+                var projectImages = HTMLprojectImage.replace(data,
                     item.images[indexCount]);
                 $(".project-entry:last").append(projectImages);
             }
