@@ -1,0 +1,32 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
+
+
+<dom-module id="iron-image">
+  <template>
+      <style>
+        figcaption p {
+          font-size: 10px;
+          text-align: center;
+        }
+      </style>
+      <figure>
+      <img src="{{src}}" alt="polymer image">
+        <figcaption>
+          <p>Built using Polymer's iron-image element. Image url taken from resumeBuilder.js, component created at helper.js</p>
+        </figcaption>
+      </figure>
+  </template>
+<script>
+Polymer ({
+  is: 'iron-image',
+
+  properties: {
+    src: {
+      type: String,
+      value: ''
+      }
+  }
+});
+</script>
+</dom-module>

@@ -174,7 +174,7 @@ education.display = function() {
         date = HTMLonlineDates.replace(data, course.date);
         url = HTMLonlineURL.replace(data, course.url);
 
-        $('#education').append(HTMLschoolStart);
+        $education.append(HTMLschoolStart);
         $('.education-entry:last').append(title + school);
         $('.education-entry:last').append(date);
         $('.education-entry:last').append(url);
@@ -237,9 +237,9 @@ var projects = {
             "images/r5.jpg"
         ]
     }, {
-        "title": "Sample pictures",
+        "title": "Use of Polymer elements",
         "dates": "2016",
-        "description": "Some sample images",
+        "description": "Images loaded using polymer elements",
         "images": [
             "http://lorempixel.com/image_output/nature-q-c-1000-400-2.jpg",
             "http://lorempixel.com/image_output/abstract-q-c-1000-400-3.jpg"

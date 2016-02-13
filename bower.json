@@ -1,0 +1,21 @@
+{
+  "name": "bower",
+  "homepage": "https://github.com/LaimonasDanyla/frontend-nanodegree-resume",
+  "authors": [
+    "Laimonas Danyla <laimonas.danyla@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "~1.2.4"
+  }
+}
