@@ -201,7 +201,7 @@ var work = {
 
 work.display = function() {
     var myWork = work.jobs;
-    var data = "%data";
+    var data = "%data%";
     var employer, title, employerTitle, location, dates, description;
 
     myWork.forEach(addMyWork);
