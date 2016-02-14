@@ -98,7 +98,7 @@ var education = {
         "url": "www.ktu.edu"
     }, {
         "name": "Udacity",
-        "location": "Online, USA",
+        "location": "USA",
         "degree": "Intro to Programming NanoDegree",
         "majors": ["Python", "App developemnt"],
         "dates": "2016",
@@ -200,17 +200,18 @@ var work = {
 };
 
 work.display = function() {
-    myWork = work.jobs;
+    var myWork = work.jobs;
+    var data = "%data";
     var employer, title, employerTitle, location, dates, description;
 
     myWork.forEach(addMyWork);
     function addMyWork(works) {
-        employer = HTMLworkEmployer.replace("%data%", works.employer);
-        title = HTMLworkTitle.replace("%data%", works.title);
+        employer = HTMLworkEmployer.replace(data, works.employer);
+        title = HTMLworkTitle.replace(data, works.title);
         employerTitle = employer + title;
-        location = HTMLworkLocation.replace("%data%", works.location);
-        dates = HTMLworkDates.replace("%data%", works.dates);
-        description = HTMLworkDescription.replace("%data%", works.description);
+        location = HTMLworkLocation.replace(data, works.location);
+        dates = HTMLworkDates.replace(data, works.dates);
+        description = HTMLworkDescription.replace(data, works.description);
 
         $("#workExperience").append(HTMLworkStart);
         $(".work-entry:last").append(employerTitle);
