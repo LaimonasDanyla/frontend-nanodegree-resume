@@ -15,7 +15,7 @@ var bio = {
         "Java Script",
         "Python basics"
     ],
-    "biopic": "images/me2.jpg"
+    "biopic": "images/me3.jpg"
 };
 
 bio.display = function() {
